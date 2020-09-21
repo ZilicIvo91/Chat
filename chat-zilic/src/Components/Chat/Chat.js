@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Messages from "../Messages/Messages";
 import Input from "../Input/Input";
+import Members from "../Members/Members";
+import './Chat.css';
+
 
 export default class Chat extends Component {
     constructor(props) {
@@ -11,11 +14,13 @@ export default class Chat extends Component {
             username: this.props.member.username,
             choiceAvatar: this.props.member.choiceAvatar
           },
+          members: []
         };
     
         this.drone = new window.Scaledrone("Lbw7I83eHxqGhEgh", {
           data: this.state.member,
         });
+        let members = [];
         this.drone.on("open", (error) => {
           if (error) {
             return console.error(error);
@@ -31,6 +36,18 @@ export default class Chat extends Component {
           messages.push({ member, text: data });
           this.setState({ messages });
         });
+        room.on('members', members => {
+          this.setState({ members })
+        });
+        room.on('member_join', member => {
+          members.push(member);
+          this.setState({members})
+        });
+        room.on('member_leave', ({id}) => {
+          const index = members.findIndex(member => member.id === id);
+          members.splice(index, 1);
+          this.setState({members})
+        });
       }
       InputMessage = (message) => {
         this.drone.publish({
@@ -41,14 +58,22 @@ export default class Chat extends Component {
     
     
     render() {
+      
+
         return (
-            <div>
-            <Messages
-                messages={this.state.messages}
-                currentMember={this.state.member}
-          />
-          <Input InputMessage={this.InputMessage} />
+            <div className="chat-containe">
+              <header className="header">
+                <h1>Welcome to chat!</h1>
+              </header>
+              <div className="chat-message-container">
+                <Members members={this.state.members}/>
+                <Messages
+                  messages={this.state.messages}
+                  currentMember={this.state.member}/>
+              </div>
+            <Input InputMessage={this.InputMessage} />
             </div>
+
         )
     }
 }

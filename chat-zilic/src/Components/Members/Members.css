@@ -1,0 +1,15 @@
+.members-container {
+    width: 15vw;
+    border: 1px solid black;
+    margin-left: 0;
+}
+li {
+    list-style: none;
+}
+.members-list{
+    display: flex;
+    margin-top: 10px;
+}
+.members-list > p {
+    margin-top: 10px;
+}

@@ -29,14 +29,11 @@ export default class App extends Component {
   render() {
     return (
       <div className="container">
-        <header className="header">
-          <h1>Dobro došli na chat</h1>
-        </header>
-        <main>
+        <div className="container-components">
         {this.state.login 
         ? <Chat member={this.state.member}/>
         : <Login Login={this.Login} />}
-        </main>
+        </div>
       </div>
     );
   }

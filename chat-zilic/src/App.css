@@ -18,22 +18,18 @@ body{
   width: 70vw;
   margin: 50px auto;
 }
-
+.container-components{
+  display: flex;
+  flex-direction: row;
+  
+}
 .header {
   font-size: 1.4rem;
   text-align: center;
   width: 100%;
 }
 
-.listMessages {
-  padding: 20px 0;
-  width: 100%;
-  margin: 0 auto;
-  list-style: none;
-  padding-left: 0;
-  flex-grow: 1;
-  overflow: auto;
-}
+
 
 .username {
   display: block;

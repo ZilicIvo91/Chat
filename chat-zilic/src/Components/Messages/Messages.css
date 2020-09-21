@@ -1,0 +1,6 @@
+.listMessages {
+    height: 70vh;
+    width: 80%;
+    list-style: none;
+    overflow: auto;
+  }
