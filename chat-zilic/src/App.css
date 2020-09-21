@@ -1,0 +1,92 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: linear-gradient(90deg, rgb(18, 81, 83) , rgb(44, 171, 173), rgb(43, 169, 172));
+  font-family: monospace;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 90vh;
+  width: 70vw;
+  margin: 50px auto;
+}
+
+.header {
+  font-size: 1.4rem;
+  text-align: center;
+  width: 100%;
+}
+
+.listMessages {
+  padding: 20px 0;
+  width: 100%;
+  margin: 0 auto;
+  list-style: none;
+  padding-left: 0;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.username {
+  display: block;
+  color: rgb(51, 51, 185);
+  font-size: 1rem;
+  padding: 4px;
+  font-weight: 600;
+}
+
+.messageText {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #17222c;
+  color: aliceblue;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}
+
+.message {
+  margin: 10px;
+  text-align: left;
+}
+
+.currentMember {
+  flex-direction: row-reverse;
+  text-align: right;
+  margin: 0 10px;
+}
+
+input {
+  margin-bottom: 10px;
+  width: 50vw;
+  padding: 5px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid #00008b;
+}
+
+.button {
+  width: 10vw;
+  padding: 5px 10px;
+  font-size: 18px;
+  color: black;
+  border: 1px solid #00008b;
+  border-radius: 8px;
+  margin-left: 10px;
+  cursor: pointer;
+}

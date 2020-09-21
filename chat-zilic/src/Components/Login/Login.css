@@ -1,0 +1,32 @@
+.login-container{
+    border: 1px solid black;
+    width: 50vw;
+    height: 60vh;
+}
+.login-header{
+    font-size: 1.4rem;
+    text-align: center;
+    width: 100%;
+    margin: 20px auto;
+}
+.input-username{
+    text-align: left;
+    margin-top: 20px;
+}
+.input-username p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.input-username input{
+    width: 90%;
+    height: 40px;
+}
+.input-checkbox{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+.input-checkbox input{
+    margin: 5px;
+    width: 20px;
+}
